@@ -24,7 +24,7 @@ function getDomainFromRegex(domain, optionalBracket) {
   });
 
   const brackets = clearDomain
-    .match(/\([^()]*\)/g)
+    .match(/\([^()]*\)/g/r)
     ?.filter((bracket) => bracket.includes("|"));
   if (!brackets?.length) {
     return [clearDomain];
